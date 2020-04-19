@@ -1,7 +1,7 @@
 # This is a minimal project for stm32 using VSCode and custom MAKEFILE
 
 ## Building
-Use *make* command to build project. Use *make-info* to get allowed make-options
+Use ```make``` command to build project. Use ```make-info``` to get allowed make-options
 ## Structure 
 **Bin** - has *hex*, *bin*, *elf* file after building <br/>
 **Build** - consists of compiled project files <br/>
