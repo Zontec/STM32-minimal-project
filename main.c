@@ -64,8 +64,9 @@ int main()
     
     
     while(1){
+        /* Send symbol using UART*/
         UART4->DR = 'A';
-        while(!(UART4->SR & USART_SR_TXE));
+        while(!(UART4->SR & USART_SR_TXE));//What until finished
         GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
         //No binding to CPU freq
         for(int i = 0; i < 100000; i++)
