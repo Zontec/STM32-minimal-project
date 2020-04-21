@@ -8,21 +8,16 @@
 
 int main()
 {
-
+    //Port clock enable
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
-
+    // UART periph enable
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART4, ENABLE);
 
-    RCC->CR |= RCC_CR_HSEON;
-    while((RCC->CR & RCC_CR_HSERDY) == 0);
-    RCC->CFGR |= RCC_CFGR_HPRE_DIV1 | RCC_CFGR_PPRE2_DIV1 | RCC_CFGR_PPRE1_DIV1;
-
-    RCC->CFGR |= 1;
-    RCC->CFGR &= ~2;
-
+    RCC->CR |= RCC_CR_HSEON;// Use out oscillator 
+    
 
     GPIO_InitTypeDef gpio;
 
